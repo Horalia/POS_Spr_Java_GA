@@ -28,5 +28,9 @@ public class InventoryDaoImpl implements InventoryDao {
         });
     }
 
-
+    @Override
+    public void save(Inventory inventory) {
+        String sql = "insert into pos.inventory (available, cost, name) values (?, ? ,?)";
+        jdbcTemplate.update(sql, inventory.getAvailable(), inventory.getCost(), inventory.getName());
+    }
 }

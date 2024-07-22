@@ -8,4 +8,6 @@ import java.util.List;
 public interface InventoryDao {
 
     List<Inventory> getAllInventory();
+
+    void save(Inventory inventory);
 }
